@@ -1,4 +1,4 @@
-import { Link, useParams, useResolvedPath } from "react-router-dom"
+import { Link, useResolvedPath } from "react-router-dom"
 import TopHeader from "./TopHeader"
 import { HiOutlineHeart } from "react-icons/hi2";
 import { HiOutlineShoppingCart } from "react-icons/hi";

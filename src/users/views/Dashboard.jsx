@@ -1,18 +1,13 @@
+import CategoryList from "../components/CategoryList"
+
+
+
+
 function Dashboard() {
     return (
         <div className="w-[80vw] m-auto flex">
-            <div className="p-10 w-1/4">
-                <div>
-                    Woman’s Fashion
-                </div>
-                <div>
-                    Men’s Fashion
-                </div>
-                <div>
-                    Electronics
-                </div>
-            </div>
-            <div className="p-10 w-full">
+            <CategoryList />
+            <div className="p-10 w-full border-l-2 border-stone-200">
                 board
             </div>
         </div>
