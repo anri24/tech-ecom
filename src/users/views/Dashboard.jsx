@@ -4,6 +4,7 @@ import SectionTitle from "../components/SectionTitle";
 import ProductItem from "../components/ProductItem";
 import { Link } from "react-router-dom";
 import CategoriesCarousel from "../components/CategoriesCarousel";
+import { PRODUCTS } from "../../datas";
 
 function Dashboard() {
     return (
@@ -18,8 +19,8 @@ function Dashboard() {
             <div className="mt-20 p-10 border-b-2 border-stone-200">
                 <SectionSmallTitle>Today's</SectionSmallTitle>
                 <SectionTitle timer={1} carusel={true}>Flash Sales</SectionTitle>
-                <div className="p-5 flex gap-5">
-                    <ProductItem />
+                <div className="p-5 flex gap-10">
+                    {PRODUCTS.map(product => <ProductItem key={product.id} data={product} />)}
                 </div>
                 <Link className="mt-5 flex justify-center p-10">
                     <div className="bg-red-500 px-10 py-3 text-white rounded capitalize">View All Product</div>
@@ -28,7 +29,6 @@ function Dashboard() {
 
             <CategoriesCarousel />
 
-            {/* <Products smallTitle="Today's" title='Flash Sales' allBtn={true} datas={[{}]} timer={1} carusel={true} />             */}
         </div>
     )
 }
