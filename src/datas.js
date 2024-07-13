@@ -44,6 +44,38 @@ export const PRODUCTS = [
             "https://www.gameon.store/cdn/shop/products/1_ff241a96-12e4-4e9e-97d3-51ba45a0f6b2.png?v=1675067000&width=800",
         ]
     },
+    {
+        id: 3,
+        Category_id: 1,
+        name: "GP11 Shooter USB Gamepad",
+        price: "660",
+        currency: "$",
+        discount: 0,
+        description: "test",
+        in_stock: true,
+        images: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFCDynzh5Ia85_ODnVUd4jv8r1hYncQigKyA&s",
+            "https://m.media-amazon.com/images/I/81I16618UML._AC_UF894,1000_QL80_.jpg",
+            "https://www.gameon.store/cdn/shop/products/1_ff241a96-12e4-4e9e-97d3-51ba45a0f6b2.png?v=1675067000&width=800",
+        ]
+    },
+    {
+        id: 3,
+        Category_id: 1,
+        name: "IPS LCD Gaming Monitor",
+        price: "480",
+        currency: "$",
+        discount: 10,
+        description: "test",
+        in_stock: true,
+        images: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFCDynzh5Ia85_ODnVUd4jv8r1hYncQigKyA&s",
+            "https://m.media-amazon.com/images/I/81I16618UML._AC_UF894,1000_QL80_.jpg",
+            "https://www.gameon.store/cdn/shop/products/1_ff241a96-12e4-4e9e-97d3-51ba45a0f6b2.png?v=1675067000&width=800",
+        ]
+    },
+    
+
     
 ]
 

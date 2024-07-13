@@ -4,7 +4,7 @@ import SectionTitle from "./SectionTitle"
 
 function CategoriesCarousel() {
     return (
-        <div className="mt-20 border-b-2 border-stone-200">
+        <div className="mt-20 border-b-2 border-stone-200 pb-10">
         <SectionSmallTitle>Categories</SectionSmallTitle>
         <SectionTitle carusel={true}>Browse By Category</SectionTitle>
         <div className="p-5 flex gap-5">
