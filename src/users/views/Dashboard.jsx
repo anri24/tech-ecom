@@ -7,9 +7,6 @@ import CategoriesCarousel from "../components/CategoriesCarousel";
 import { PRODUCTS } from "../../datas";
 import Guaranties from "../components/Guaranties";
 
-
-
-
 function Dashboard() {
     return (
         <div className="w-[80vw] m-auto">
