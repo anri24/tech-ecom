@@ -84,6 +84,16 @@ export const CATEGORIES = [
         id: 1,
         name: "Phone",
         svg: '<svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" height="5em" width="auto"><path d="M7 2 H17 A2 2 0 0 1 19 4 V20 A2 2 0 0 1 17 22 H7 A2 2 0 0 1 5 20 V4 A2 2 0 0 1 7 2 z" /><path d="M12 18h.01" /></svg>',
+        subCategories: [
+            {
+                id: 4,
+                name: "Phone screen",
+            },
+            {
+                id: 5,
+                name: "test"
+            }
+        ]
     },
     {
         id: 2,
@@ -91,7 +101,7 @@ export const CATEGORIES = [
         svg: '<svg viewBox="0 0 24 24" fill="currentColor" height="5em" width="auto"><path fill="none" d="M0 0h24v24H0z" /><path d="M4 16h16V5H4v11zm9 2v2h4v2H7v-2h4v-2H2.992A.998.998 0 012 16.993V4.007C2 3.451 2.455 3 2.992 3h18.016c.548 0 .992.449.992 1.007v12.986c0 .556-.455 1.007-.992 1.007H13z" /></svg>',
     },
     {
-        id: 2,
+        id: 3,
         name: "SmartWatch",
         svg: '<svg fill="currentColor" viewBox="0 0 16 16" height="5em" width="auto"><path d="M9 5a.5.5 0 00-1 0v3H6a.5.5 0 000 1h2.5a.5.5 0 00.5-.5V5z" /><path d="M4 1.667v.383A2.5 2.5 0 002 4.5v7a2.5 2.5 0 002 2.45v.383C4 15.253 4.746 16 5.667 16h4.666c.92 0 1.667-.746 1.667-1.667v-.383a2.5 2.5 0 002-2.45V8h.5a.5.5 0 00.5-.5v-2a.5.5 0 00-.5-.5H14v-.5a2.5 2.5 0 00-2-2.45v-.383C12 .747 11.254 0 10.333 0H5.667C4.747 0 4 .746 4 1.667zM4.5 3h7A1.5 1.5 0 0113 4.5v7a1.5 1.5 0 01-1.5 1.5h-7A1.5 1.5 0 013 11.5v-7A1.5 1.5 0 014.5 3z" /></svg>',
       },
