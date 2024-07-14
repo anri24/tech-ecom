@@ -27,7 +27,7 @@ function Signup() {
                             <Button>Create account</Button>
                             <div className="flex justify-around">
                                 <span>Already have account?</span>
-                                <Link className="border-b-2 border-stone-400">Log in</Link>
+                                <Link to='/login' className="border-b-2 border-stone-400">Log in</Link>
                             </div>
                         </div>
                     </form>
