@@ -9,6 +9,7 @@ import Cart from "./users/views/Cart";
 import NotFound from "./NotFound";
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
+import CreateProduct from "./users/views/CreateProduct";
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
             {
                 path: 'signup',
                 element: <Signup />
+            },
+            {
+                path: 'product_create',
+                element: <CreateProduct />
             },
             {
                 path: '*',
