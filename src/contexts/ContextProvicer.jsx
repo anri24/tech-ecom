@@ -1,17 +1,33 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
+import axiosClient from "../axios-client";
 
 const StateContext = createContext({
     user: {},
     token: null,
+    categories: null,
+    selectedCategories: null,
+    selectedSubCategories: null,
     setUser: () => {},
     setToken: () => {},
+    getCategories: () => {},
+    setSelectedCategories: () => {},
+    getSubCategories: () => {},
+    setSelectedSubCategories: () => {},
+    
 })
 
 export const ContextProvider = ({children}) => {
     const [user, setUser] = useState({});
     const [token, _setToken] = useState(localStorage.getItem("TOKEN"));
+    const [categories, setCategories] = useState([]);
+    const [selectedCategories, setSelectedCategories] = useState(null);
+    const [subCategories, setSubCategories] = useState([]);
+    const [selectedSubCategories, setSelectedSubCategories] = useState(null);
+
+
+
 
     function setToken(token){
         _setToken(token)
@@ -22,12 +38,37 @@ export const ContextProvider = ({children}) => {
         }
     }
 
+    function getCategories(){
+        axiosClient.get('/category/all')
+        .then(({data}) => {
+            setCategories(data.data)
+        })
+    }
+
+    function getSubCategories(){
+        if(selectedCategories){
+            axiosClient.get(`/category/${selectedCategories}`)
+            .then(({data}) => {
+                setSubCategories(data.data.children);
+            })
+        }
+    }
+
     return (
         <StateContext.Provider value={{
             user,
             token,
+            categories,
+            selectedCategories,
+            subCategories,
+            selectedSubCategories,
             setUser,
             setToken,
+            setSelectedCategories,
+            getCategories,
+            getSubCategories,
+            setSelectedSubCategories,
+            
         }}>
             {children}
         </StateContext.Provider>
