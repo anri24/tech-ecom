@@ -10,7 +10,7 @@ function Signup() {
                 <div className="flex flex-col gap-5 justify-center">
                     <h2 className="text-3xl font-bold">Create an account</h2>
                     <p className="text-sm">Enter your details below</p>
-                    <form className="flex flex-col gap-10">
+                    <form className="flex flex-col gap-10 w-[20vw]">
                     <div className="flex flex-col">
                             <label>Name</label>
                             <input type="text" className="border-b-2 border-stone-300 p-2 bg-stone-200 rounded" />

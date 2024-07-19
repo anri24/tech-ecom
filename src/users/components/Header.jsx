@@ -22,8 +22,8 @@ function Header() {
                 </div>
                 <div className="flex justify-between text-center gap-10">
                     <SearchInput />
-                    <Link className="text-2xl p-2"><HiOutlineHeart /></Link>
-                    <Link className="text-2xl p-2"><HiOutlineShoppingCart /></Link>
+                    <Link to='/wishlist' className="text-2xl p-2"><HiOutlineHeart /></Link>
+                    <Link to='/cart' className="text-2xl p-2"><HiOutlineShoppingCart /></Link>
                 </div>
             </div>
         </div>

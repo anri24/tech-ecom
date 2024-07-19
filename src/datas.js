@@ -45,7 +45,7 @@ export const PRODUCTS = [
         ]
     },
     {
-        id: 3,
+        id: 4,
         Category_id: 1,
         name: "GP11 Shooter USB Gamepad",
         price: "660",
@@ -60,7 +60,7 @@ export const PRODUCTS = [
         ]
     },
     {
-        id: 3,
+        id: 5,
         Category_id: 1,
         name: "IPS LCD Gaming Monitor",
         price: "480",
@@ -74,6 +74,8 @@ export const PRODUCTS = [
             "https://www.gameon.store/cdn/shop/products/1_ff241a96-12e4-4e9e-97d3-51ba45a0f6b2.png?v=1675067000&width=800",
         ]
     },
+
+   
     
 
     
