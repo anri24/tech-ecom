@@ -12,10 +12,12 @@ function CreateProduct() {
     const discountRef = useRef();
     const descriptionRef = useRef();
 
-    const {categories, getCategories, 
+    const {
+        categories, getCategories, 
         selectedCategories, setSelectedCategories, 
         subCategories, getSubCategories, 
-        selectedSubCategories, setSelectedSubCategories} = useStateContext();
+        selectedSubCategories, setSelectedSubCategories
+    } = useStateContext();
 
     useEffect(() => {
         getCategories();
@@ -23,10 +25,13 @@ function CreateProduct() {
 
     useEffect(() => {
         getSubCategories();
-    }, [selectedCategories])
+    }, [
+        selectedCategories
+    ]);
 
     function handleUploadProduct(e){
         e.preventDefault();
+        
         const data = {
             category_id: selectedSubCategories,
             name: nameRef.current.value,

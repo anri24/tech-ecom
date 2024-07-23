@@ -8,8 +8,6 @@ function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
 
-    // const [errors, setErrors] = useState(null);
-
     const {setUser, setToken} = useStateContext();
 
     function handleLogin(e){
@@ -47,6 +45,9 @@ function Login() {
                         <div className="flex gap-40">
                             <Button>Login</Button>
                             <Link className="flex flex-col justify-center text-red-500">Forget Password?</Link>
+                        </div>
+                        <div className="w-[100%] text-center bg-stone-200 px-10 py-3 rounded">
+                            <Link to='http://localhost:8000/auth/google/redirect'>Login with google</Link>
                         </div>
                     </form>
                 </div>
