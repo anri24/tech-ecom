@@ -15,6 +15,7 @@ const StateContext = createContext({
     setSelectedCategories: () => {},
     getSubCategories: () => {},
     setSelectedSubCategories: () => {},
+    googleAuth: () => {},
     
 })
 
@@ -54,6 +55,14 @@ export const ContextProvider = ({children}) => {
         }
     }
 
+    function googleAuth(data){   
+        axiosClient.post('/google-auth', data)
+        .then(({data}) => {
+            setUser(data.user)
+            setToken(data.token)
+        });
+    }
+        
     return (
         <StateContext.Provider value={{
             user,
@@ -68,6 +77,7 @@ export const ContextProvider = ({children}) => {
             getCategories,
             getSubCategories,
             setSelectedSubCategories,
+            googleAuth,
             
         }}>
             {children}

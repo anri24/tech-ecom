@@ -3,12 +3,16 @@ import Button from "../users/components/Button"
 import { useRef } from "react"
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvicer";
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from "jwt-decode";
+
+
 
 function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
 
-    const {setUser, setToken} = useStateContext();
+    const {setUser, setToken, googleAuth} = useStateContext();
 
     function handleLogin(e){
         e.preventDefault();
@@ -46,9 +50,16 @@ function Login() {
                             <Button>Login</Button>
                             <Link className="flex flex-col justify-center text-red-500">Forget Password?</Link>
                         </div>
-                        <div className="w-[100%] text-center bg-stone-200 px-10 py-3 rounded">
-                            <Link to='http://localhost:8000/auth/google/redirect'>Login with google</Link>
-                        </div>
+                        <GoogleLogin
+                            onSuccess={credentialResponse => {
+                                const credentialsDecode = jwtDecode(credentialResponse.credential)
+                                // console.log(credentialsDecode)
+                                googleAuth(credentialsDecode)
+                            }}
+                            onError={() => {
+                                console.log('Login Failed');
+                            }}
+                            />
                     </form>
                 </div>
             </div>

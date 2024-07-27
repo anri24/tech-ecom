@@ -22,35 +22,35 @@ const router = createBrowserRouter([
                 element: <Dashboard />
             },
             {
-                path: 'product/:id',
+                path: '/product/:id',
                 element: <ProductDetails />
             },
             {
-                path: 'about',
+                path: '/about',
                 element: <About />
             },
             {
-                path: 'contact',
+                path: '/contact',
                 element: <Contact />
             },
             {
-                path: 'wishlist',
+                path: '/wishlist',
                 element: <Wishlist />
             },
             {
-                path: 'cart',
+                path: '/cart',
                 element: <Cart />
             },
             {
-                path: 'login',
+                path: '/login',
                 element: <Login />
             },
             {
-                path: 'signup',
+                path: '/signup',
                 element: <Signup />
             },
             {
-                path: 'product_create',
+                path: '/product_create',
                 element: <CreateProduct />
             },
             {

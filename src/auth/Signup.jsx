@@ -3,6 +3,8 @@ import Button from "../users/components/Button"
 import { useRef } from "react"
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvicer";
+import { GoogleLogin } from "@react-oauth/google";
+import { jwtDecode } from "jwt-decode";
 
 function Signup() {
     const nameRef = useRef();
@@ -10,7 +12,7 @@ function Signup() {
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();
 
-    const {setUser, setToken} = useStateContext();
+    const {setUser, setToken, googleAuth} = useStateContext();
 
     function registerHandle(e){
         e.preventDefault();
@@ -55,11 +57,23 @@ function Signup() {
                         </div>
                         <div className="flex flex-col gap-10 text-center">
                             <Button>Create account</Button>
+
+                            <GoogleLogin
+                            onSuccess={credentialResponse => {
+                                const credentialsDecode = jwtDecode(credentialResponse.credential)
+                                // console.log(credentialsDecode)
+                                googleAuth(credentialsDecode)
+                            }}
+                            onError={() => {
+                                console.log('Login Failed');
+                            }}
+                            />
                             <div className="flex justify-around">
                                 <span>Already have account?</span>
                                 <Link to='/login' className="border-b-2 border-stone-400">Log in</Link>
                             </div>
                         </div>
+                        
                     </form>
                 </div>
             </div>
