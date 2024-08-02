@@ -9,6 +9,7 @@ const StateContext = createContext({
     categories: null,
     selectedCategories: null,
     selectedSubCategories: null,
+    productLimited: [],
     setUser: () => {},
     setToken: () => {},
     getCategories: () => {},
@@ -16,6 +17,8 @@ const StateContext = createContext({
     getSubCategories: () => {},
     setSelectedSubCategories: () => {},
     googleAuth: () => {},
+    getLimitedProducts: () => {},
+    setProductLimited: () => {},
     
 })
 
@@ -26,6 +29,7 @@ export const ContextProvider = ({children}) => {
     const [selectedCategories, setSelectedCategories] = useState(null);
     const [subCategories, setSubCategories] = useState([]);
     const [selectedSubCategories, setSelectedSubCategories] = useState(null);
+    const [productLimited, setProductLimited] = useState([]);
 
 
 
@@ -55,6 +59,13 @@ export const ContextProvider = ({children}) => {
         }
     }
 
+    function getLimitedProducts(){
+        axiosClient.get('product/limited')
+        .then(({data}) => {
+            setProductLimited(data);
+        });
+    }
+
     function googleAuth(data){   
         axiosClient.post('/google-auth', data)
         .then(({data}) => {
@@ -71,6 +82,7 @@ export const ContextProvider = ({children}) => {
             selectedCategories,
             subCategories,
             selectedSubCategories,
+            productLimited,
             setUser,
             setToken,
             setSelectedCategories,
@@ -78,6 +90,8 @@ export const ContextProvider = ({children}) => {
             getSubCategories,
             setSelectedSubCategories,
             googleAuth,
+            getLimitedProducts,
+            setProductLimited,
             
         }}>
             {children}

@@ -6,8 +6,19 @@ import { Link } from "react-router-dom";
 import CategoriesCarousel from "../components/CategoriesCarousel";
 import { PRODUCTS } from "../../datas";
 import Guaranties from "../components/Guaranties";
+import { useStateContext } from "../../contexts/ContextProvicer";
+import { useEffect } from "react";
 
 function Dashboard() {
+    const {productLimited, getLimitedProducts} = useStateContext();
+
+    useEffect(function() {
+        getLimitedProducts();
+    }, []);
+
+    console.log(productLimited)
+
+
     return (
         <div className="w-[80vw] m-auto">
             <div className="flex">
