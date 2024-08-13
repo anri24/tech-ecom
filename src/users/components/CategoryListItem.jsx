@@ -10,11 +10,11 @@ function CategoryListItem({data}) {
         <div>
             <div className="flex justify-between text-center">
             <Link>{data.name}</Link>
-           {data.subCategories.length > 0 ? <div className="text-2xl" onClick={() => setIsCatOpen(isOpen => !isOpen)}>{isCatOpen ? <HiChevronDown /> : <HiChevronRight />}</div> : ''}
+           {data.children.length > 0 ? <div className="text-2xl" onClick={() => setIsCatOpen(isOpen => !isOpen)}>{isCatOpen ? <HiChevronDown /> : <HiChevronRight />}</div> : ''}
             </div>
             {isCatOpen && (
                 <div className="pt-5 pl-5 flex flex-col gap-3">
-                    {data.subCategories.map(subcat => <Link className="capitalize" key={subcat.id}>{subcat.name}</Link>)}
+                    {data.children.map(subcat => <Link className="capitalize" key={subcat.id}>{subcat.name}</Link>)}
                 </div>
             )}
         </div>

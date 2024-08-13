@@ -5,12 +5,14 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import SearchInput from "./SearchInput";
 import { useState } from "react";
+import { useStateContext } from "../../contexts/ContextProvicer";
 
 
 
 
 function Header() {
     const [dropIsOpen, setDropIsOpen] = useState(false)
+    const {token} = useStateContext();
 
     const path = useResolvedPath();
     return (
@@ -32,10 +34,18 @@ function Header() {
                         <button className="text-2xl p-2" onClick={() => setDropIsOpen(open => !open)}><HiOutlineUserCircle /></button>
                         {dropIsOpen && (
                             <div className="flex flex-col absolute w-40 top-10 right-0 bg-stone-200 mt-5 p-2 gap-2">
-                            <Link className="hover:bg-stone-300 p-2">Login</Link>
-                            <Link className="hover:bg-stone-300 p-2">Register</Link>
-                            <Link to='/product_create' className="hover:bg-stone-300 p-2">Create Product</Link>
-                            <button className="hover:bg-stone-300 p-2">Logout</button>
+                                {token ?(
+                                    <>
+                                        <Link to='/login' className="hover:bg-stone-300 p-2">Login</Link>
+                                        <Link to='/register' className="hover:bg-stone-300 p-2">Register</Link>
+                                    </>)
+                                    :
+                                    (<>
+                                        <Link to='/product_create' className="hover:bg-stone-300 p-2">Create Product</Link>
+                                        <button className="hover:bg-stone-300 p-2">Logout</button>
+                                    </>)
+                                    
+                                }
                         </div>
                         )}
                     </div>
