@@ -37,7 +37,7 @@ function Header() {
                                 {token ?(
                                     <>
                                         <Link to='/login' className="hover:bg-stone-300 p-2">Login</Link>
-                                        <Link to='/register' className="hover:bg-stone-300 p-2">Register</Link>
+                                        <Link to='/signup' className="hover:bg-stone-300 p-2">Sign Up</Link>
                                     </>)
                                     :
                                     (<>

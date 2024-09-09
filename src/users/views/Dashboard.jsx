@@ -44,7 +44,7 @@ function Dashboard() {
                 <SectionSmallTitle>Our Products</SectionSmallTitle>
                 <SectionTitle carusel={true}>Explore Our Products</SectionTitle>
                 <div className="mt-5 flex gap-16 flex-wrap">
-                {productLimited.map(product => <ProductItem key={product.id} data={product} />)}
+                {productLimited.data?.map(product => <ProductItem key={product.id} data={product} />)}
                 </div>
                 <Link className="mt-5 flex justify-center p-10">
                     <div className="bg-red-500 px-10 py-3 text-white rounded capitalize">View All Product</div>
