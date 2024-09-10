@@ -10,6 +10,7 @@ import NotFound from "./NotFound";
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
 import CreateProduct from "./users/views/CreateProduct";
+import AdminLayout from "./admin/layout/AdminLayout";
 
 
 const router = createBrowserRouter([
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
                 element: <NotFound />
             }
         ]
+    },
+    {
+        path: '/admin',
+        element: <AdminLayout />
     }
     
 ])
