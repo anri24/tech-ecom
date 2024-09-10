@@ -11,6 +11,8 @@ import Login from "./auth/Login";
 import Signup from "./auth/Signup";
 import CreateProduct from "./users/views/CreateProduct";
 import AdminLayout from "./admin/layout/AdminLayout";
+import Users from "./admin/views/Users";
+import AdminProducts from "./admin/views/AdminProducts";
 
 
 const router = createBrowserRouter([
@@ -62,7 +64,18 @@ const router = createBrowserRouter([
     },
     {
         path: '/admin',
-        element: <AdminLayout />
+        element: <AdminLayout />,
+        children: [
+            {
+                path: '/admin',
+                element: <AdminProducts />
+            },
+            {
+                path: '/admin/users',
+                element: <Users />
+            },
+            
+        ]
     }
     
 ])
